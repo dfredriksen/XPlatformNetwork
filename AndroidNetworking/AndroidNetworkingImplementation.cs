@@ -1,3 +1,4 @@
+using CYINT.XPlatformNetworking.AndroidImplementation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,18 +7,20 @@ using Android.App;
 using CYINT.XPlatformNetworking;
 using Android.Net;
 using Android.Content;
+using Xamarin.Forms;
 
-namespace CYINT.XPlatformNetworking.Android
+[assembly: Xamarin.Forms.Dependency (typeof (AndroidNetworkingImplementation))]
+namespace CYINT.XPlatformNetworking.AndroidImplementation
 {
-    public class AndroidNetworking : IXPlatformNetworking
+    public class AndroidNetworkingImplementation : IXPlatformNetworking
     {
 
         protected Context _appContext;
         protected ConnectivityManager _connectivityManager;
 
-        public AndroidNetworking(Context appContext)
-        {
-            SetAppContext(appContext);        
+        public AndroidNetworkingImplementation()
+        {       
+            SetAppContext(Android.App.Application.Context);        
         }
 
         public bool IsNetworkAvailable()
@@ -48,14 +51,14 @@ namespace CYINT.XPlatformNetworking.Android
                 SetConnectivityManager((ConnectivityManager) GetAppContext().GetSystemService(Context.ConnectivityService));
             }
             else
-                throw new AndroidNetworkingException("Could not get connectivity manager. Context not found.");
+                throw new AndroidNetworkingImplementationException("Could not get connectivity manager. Context not found.");
 
             return _connectivityManager;
         }
     }
 
-    public class AndroidNetworkingException : Exception
+    public class AndroidNetworkingImplementationException : Exception
     {
-        public AndroidNetworkingException(string message) : base(message) { }
+        public AndroidNetworkingImplementationException(string message) : base(message) { }
     }
 }
