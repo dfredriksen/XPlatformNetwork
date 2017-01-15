@@ -20,7 +20,7 @@ namespace CYINT.XPlatformNetworking.Android
             SetAppContext(appContext);        
         }
 
-        public bool IsNetworkAvailable(Object appContext)
+        public bool IsNetworkAvailable()
         {         
             NetworkInfo activeConnection = GetConnectivityManager().ActiveNetworkInfo;
             return (activeConnection != null) && activeConnection.IsConnected;
