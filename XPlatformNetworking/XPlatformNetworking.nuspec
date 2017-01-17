@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>CYINT.XPlatformNetworking</id>
+    <version>0.0.1-alpha</version>
+    <title>CYINT.XPlatformNetworking</title>
+    <authors>CYINT Technologies</authors>
+    <owners>CYINT Technologies</owners>
+    <projectUrl>https://www.github.com/dfredriksen/XPlatformNetworking</projectUrl>
+    <description>Cross platform library for making API calls over a network</description>
+    <releaseNotes>Initial Project Publication</releaseNotes>    
+    <tags>API JSON NETWORKING</tags>
+  </metadata>
+</package>
