@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="XPlatformNetworking.cs" />
+    <Compile Include="IXPlatformNetworking.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XPlatformNetworkingImplementation.cs" />
   </ItemGroup>

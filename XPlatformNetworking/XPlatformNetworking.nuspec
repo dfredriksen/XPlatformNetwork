@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>CYINT.XPlatformNetworking</id>
-    <version>0.0.2-alpha</version>
+    <version>0.0.4-alpha</version>
     <title>CYINT.XPlatformNetworking</title>
     <authors>CYINT Technologies</authors>
     <owners>CYINT Technologies</owners>
@@ -11,4 +11,9 @@
     <releaseNotes>Initial Project Publication</releaseNotes>    
     <tags>API JSON NETWORKING</tags>
   </metadata>
+  <files>
+
+        <!-- Android reference assemblies -->
+        <file src="..\AndroidNetworking\bin\Release\AndroidNetworking.dll" target="lib\monoandroid\AndroidNetworking.dll" />
+  </files>
 </package>

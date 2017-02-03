@@ -61,6 +61,32 @@ namespace CYINT.XPlatformNetworking
         }
 
 
+        public async Task<byte[]> FetchBinaryData(string path)
+        { 
+            Uri uri;
+            HttpResponseMessage response;
+            response = null;
+            byte[] file;
+
+            if(IsNetworkAvailable())
+            {
+                uri = new Uri(string.Format( path, string.Empty));
+                response = await GetHttpClient().GetAsync(uri);
+                SetResponse(response);
+
+                if( response.IsSuccessStatusCode )
+                {
+                    file = await response.Content.ReadAsByteArrayAsync();
+                    return file; 
+                }                                         
+            }
+
+            throw new XPlatformNetworkingImplementationException("Network call failed, and no local storage data exists.");
+       
+        }
+
+
+
         public async Task<string> FetchData(
             string key
             ,string path
